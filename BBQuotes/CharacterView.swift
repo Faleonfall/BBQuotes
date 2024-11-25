@@ -19,7 +19,7 @@ struct CharacterView: View {
                     .scaledToFit()
                 
                 ScrollView {
-                    AsyncImage(url: character.images[0]) { image in
+                    AsyncImage(url: character.images.randomElement()) { image in
                         image
                             .resizable()
                             .scaledToFill()
