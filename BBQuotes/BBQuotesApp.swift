@@ -20,5 +20,5 @@ struct BBQuotesApp: App {
  Version 2 Feauture List:
  - New TabView - done
  - More Character images - done as random
- - Auto-scroll
+ - Auto-scroll - done
 */
