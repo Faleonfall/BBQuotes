@@ -31,7 +31,7 @@ struct QuoteView: View {
                         case .fetching:
                             ProgressView()
                             
-                        case .success:
+                        case .successQuote:
                             Text("\"\(vm.quote.quote)\"")
                                 .minimumScaleFactor(0.5)
                                 .multilineTextAlignment(.center)
@@ -63,12 +63,15 @@ struct QuoteView: View {
                                 showCharacterInfo.toggle()
                             }
                             
+                        case .successEpisode:
+                            EmptyView()
+                            
                         case .failed(let error):
                             Text(error.localizedDescription)
+                            
+                            Spacer()
+                            
                         }
-                        
-                        Spacer()
-                        
                     }
                     
                     Button {

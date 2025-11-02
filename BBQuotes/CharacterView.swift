@@ -27,7 +27,7 @@ struct CharacterView: View {
                         } placeholder: {
                             ProgressView()
                         }
-                        .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 1.7)
+                        .frame(width: geometry.size.width / 1.1, height: geometry.size.height / 1.7)
                         .clipShape(.rect(cornerRadius: 25))
                         .padding(.top, 60)
                         
@@ -40,7 +40,7 @@ struct CharacterView: View {
                             
                             Divider()
                             
-                            Text("\(character.name) Character Info")
+                            Text("Character Info")
                                 .font(.title2)
                             
                             Text("Born \(character.birthday)")
@@ -101,8 +101,13 @@ struct CharacterView: View {
                             .tint(.primary)
                             
                         }
-                        .frame(width: geometry.size.width / 1.25, alignment: .leading)
+                        .frame(width: geometry.size.width / 1.2, alignment: .leading)
                         .padding(.bottom, 50)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(.black.opacity(0.4))
+                        )
                         .id(1)
                     }
                     .scrollIndicators(.hidden)

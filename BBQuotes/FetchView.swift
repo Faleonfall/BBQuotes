@@ -86,7 +86,7 @@ struct FetchView: View {
                             Text("Get Random Quote")
                                 .font(.title3)
                                 .foregroundStyle(.white)
-                                .padding()
+                                .padding(15)
                                 .background(Color("\(show.removeSpaces())Button"))
                                 .clipShape(.rect(cornerRadius: 12.5))
                                 .shadow(color: Color("\(show.removeSpaces())Shadow"), radius: 2)
@@ -102,24 +102,27 @@ struct FetchView: View {
                             Text("Get Random Episode")
                                 .font(.title3)
                                 .foregroundStyle(.white)
-                                .padding()
+                                .padding(15)
                                 .background(Color("\(show.removeSpaces())Button"))
                                 .clipShape(.rect(cornerRadius: 12.5))
                                 .shadow(color: Color("\(show.removeSpaces())Shadow"), radius: 2)
                         }
                     }
-                    .padding(.horizontal, 30)
+                    .padding(.horizontal, 35)
                     
                     Spacer(minLength: 95)
                     
                 }
-                .frame(width: geo.size.width, height: geo.size.height)
+                .frame(width: geo.size.width, height: geo.size.height/1.05)
             }
             .frame(width: geo.size.width, height: geo.size.height)
         }
         .ignoresSafeArea()
         .sheet(isPresented: $showCharacterInfo) {
             CharacterView(character: vm.character, show: show)
+        }
+        .task {
+            await vm.getQuoteData(for: show)
         }
     }
 }
