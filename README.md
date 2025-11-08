@@ -18,8 +18,7 @@ Fetch random quotes and episode moments featuring your favorite characters — a
 <p align="center">
   <img src="https://github.com/user-attachments/assets/fed9842c-3729-4f87-8f2d-96d536c6f569"
        alt="App Screenshot"
-       width="300"
-       style="border-radius:12px"/>
+       width="300"/>
 </p>
 
 ---
